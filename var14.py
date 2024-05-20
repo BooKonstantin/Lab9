@@ -1,6 +1,12 @@
 import matplotlib.pyplot as plt
 import streamlit as st
 
+def var14_main():
+    lines = get_data(filename)
+    sum_liave_m, sum_liave_f, sum_dead_m, sum_dead_f = work(lines)
+    show_web(sum_liave_m, sum_liave_f, sum_dead_m, sum_dead_f)
+
+
 filename = "data.csv"
 
 def show_web(sum_liave_m, sum_liave_f, sum_dead_m, sum_dead_f):
@@ -76,12 +82,13 @@ def work(lines):
 
     return (sum_liave_m, sum_liave_f, sum_dead_m, sum_dead_f)
 
-lines = get_data(filename)
-# print(lines)
-
-sum_liave_m, sum_liave_f, sum_dead_m, sum_dead_f = work(lines)
-
-# print("Родственников у погибших: m {} - f {}".format(sum_dead_m,sum_dead_f))
-# print("Родственников у выживших: m {} - f {}".format(sum_liave_m, sum_liave_f))
-
-show_web(sum_liave_m, sum_liave_f, sum_dead_m, sum_dead_f)
+# lines = get_data(filename)
+# # print(lines)
+#
+# sum_liave_m, sum_liave_f, sum_dead_m, sum_dead_f = work(lines)
+#
+# # print("Родственников у погибших: m {} - f {}".format(sum_dead_m,sum_dead_f))
+# # print("Родственников у выживших: m {} - f {}".format(sum_liave_m, sum_liave_f))
+#
+# show_web(sum_liave_m, sum_liave_f, sum_dead_m, sum_dead_f)
+var14_main()
